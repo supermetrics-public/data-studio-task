@@ -1,0 +1,1 @@
+const getSchema = (request: any) => {};

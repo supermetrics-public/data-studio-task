@@ -4,7 +4,7 @@
 
 In this repo there is,
 
-1. An incomplete implementation of a Data Studio connector
+1. An incomplete implementation of a Data Studio connector (`sm_posts_connector`)
 2. A small API application
 
 Your task is as follows,

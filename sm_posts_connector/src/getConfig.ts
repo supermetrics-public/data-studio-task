@@ -1,0 +1,1 @@
+const getConfig = (request: any) => {};

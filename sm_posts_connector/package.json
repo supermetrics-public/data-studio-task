@@ -1,0 +1,18 @@
+{
+  "name": "sm_posts_connector",
+  "version": "0.0.1",
+  "description": "Example Data Studio connector for the SM posts API",
+  "main": "src/index.ts",
+  "author": "James Elderfield <james.elderfield@supermetrics.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "setup": "yarn clasp login && yarn clasp create --type standalone --title 'SM Posts Connector' --rootDir ./src",
+    "build": "yarn clasp push"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.1",
+    "@types/google-apps-script": "^1.0.46",
+    "typescript": "^4.6.3"
+  }
+}

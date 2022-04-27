@@ -1,0 +1,27 @@
+{
+  "timeZone": "Europe/Bucharest",
+  "dependencies": {},
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "dataStudio": {
+    "name": "SM Posts",
+    "logoUrl": "https://s3.amazonaws.com/Supermetrics/images/sm_app_icon_40x40_rounded_corners.png",
+    "company": "Supermetrics",
+    "companyUrl": "https://supermetrics.com",
+    "addonUrl": "https://supermetrics.com/product/supermetrics-for-data-studio/",
+    "supportUrl": "https://support.supermetrics.com",
+    "description": "A connector for the SM posts assignment API",
+    "sources": [
+      "SM_POSTS"
+    ],
+    "shortDescription": "A connector for the SM posts assignment API",
+    "authType": [
+      "NONE"
+    ],
+    "feeType": [
+      "FREE"
+    ],
+    "privacyPolicyUrl": "https://supermetrics.com/privacy-policy",
+    "termsOfServiceUrl": "https://supermetrics.com/terms-of-service"
+  }
+}
