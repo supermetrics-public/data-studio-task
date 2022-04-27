@@ -1,17 +1,10 @@
 const clientIdProperty = 'clientId';
-const emailProperty = 'email';
 
 const resetAuth = () =>
-    PropertiesService.getUserProperties()
-        .deleteProperty(clientIdProperty)
-        .deleteProperty(emailProperty);
+    PropertiesService.getUserProperties().deleteProperty(clientIdProperty);
 
-// TODO: Check this against the auth endpoint?
 const isAuthValid = () =>
-    !!(
-        PropertiesService.getUserProperties().getProperty(clientIdProperty) &&
-        PropertiesService.getUserProperties().getProperty(emailProperty)
-    );
+    !!PropertiesService.getUserProperties().getProperty(clientIdProperty);
 
 const getAuthType = () => {
     const cc = DataStudioApp.createCommunityConnector();
@@ -20,16 +13,13 @@ const getAuthType = () => {
 };
 
 interface SetCredentialsInput {
-    userToken: {
-        username: string;
-        token: string;
-    };
+    key: string;
 }
 
-const setCredentials = ({
-    userToken: { username, token },
-}: SetCredentialsInput) =>
-    PropertiesService.getUserProperties().setProperties({
-        [clientIdProperty]: token,
-        [emailProperty]: username,
-    });
+const setCredentials = ({ key }: SetCredentialsInput) => {
+    PropertiesService.getUserProperties().setProperty(clientIdProperty, key);
+
+    return {
+        errorCode: !!key ? 'NONE' : 'INVALID_CREDENTIALS',
+    };
+};
