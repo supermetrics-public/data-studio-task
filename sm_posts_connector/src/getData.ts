@@ -1,1 +1,3 @@
-const getData = (request: any) => {};
+const getData = (request: unknown) => {
+    // TODO: Implement data fetching
+};
