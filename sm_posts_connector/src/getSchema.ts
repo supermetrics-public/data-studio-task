@@ -1,5 +1,3 @@
-// TODO: ask them to add a new field
-
 const getSchema = () => {
     const cc = DataStudioApp.createCommunityConnector();
 
