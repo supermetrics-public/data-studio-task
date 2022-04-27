@@ -19,7 +19,7 @@ Use the following endpoint to register a token:
 **PARAMS:**
 
 ```
-*client_id:* Users' client ID from user authentication
+*client_id:* Client ID from user authentication
 
 *email:* User's email from configuration screen
 
@@ -60,7 +60,7 @@ Use the following endpoint to fetch posts:
 
 The user can configure a limit on the number of posts fetched from the API, your implementation of `getData` should respect this setting.
 
-### 3. Improve the connector (Optional) 
+### 3. Improve the connector (Optional)
 
 The connector is very simple, and not necessarily written following best practices. Feel free to refactor or extend any part of the connector code. Even if you choose not to improve the connector much, we will discuss potential improvements in the interview.
 
@@ -74,4 +74,4 @@ In order to deploy and test your connector you will require a Google account, an
 
 ## Getting started
 
-After installing the project dependencies via `yarn`, you can run the convenience script `yarn setup` to login to `clasp` and create a new script to work with. You can push your local code to the script with `yarn build`. 
+After installing the project dependencies via `yarn`, you can run the convenience script `yarn setup` to login to `clasp` and create a new script to work with. You can push your local code to the script with `yarn build`.
