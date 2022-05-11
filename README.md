@@ -1,5 +1,13 @@
 # Supermetrics Google Data Studio Assignment
 
+## Background
+
+[Google Apps Script](https://developers.google.com/apps-script) is a Google-hosted JavaScript environment. All [Google Data Studio](https://datastudio.google.com/) community connectors (i.e. plugins not developed by Google) are developed and run in this environment. There is a [web editor](https://script.google.com/home/start) available for Apps Script, but at Supermetrics we typically prefer to write code locally and push to the cloud environment via [clasp](https://github.com/google/clasp). The web editor is still useful for testing and deployment of the connector however.
+
+Detailed documentation on writing Data Studio connectors can be [found here](https://developers.google.com/datastudio/connector).
+
+In order to deploy and test a connector you will require a Google account, and will have to accept the Terms & Conditions of use for Data Studio.
+
 ## Your task
 
 In this repo there is an incomplete implementation of a very basic Data Studio connector.
@@ -63,14 +71,6 @@ The user can configure a limit on the number of posts fetched from the API, your
 ### 3. Improve the connector (Optional)
 
 The connector is very simple, and not necessarily written following best practices. Feel free to refactor or extend any part of the connector code. Even if you choose not to improve the connector much, we will discuss potential improvements in the interview.
-
-## Background info
-
-[Google Apps Script](https://developers.google.com/apps-script) is a Google-hosted JavaScript environment. All [Google Data Studio](https://datastudio.google.com/) community connectors are developed and run in this environment. There is a [web editor](https://script.google.com/home/start) available for Apps Script, but at Supermetrics we typically prefer to write code locally and push to the cloud environment via [clasp](https://github.com/google/clasp). The web editor is still useful for testing and deployment of the connector however.
-
-Reasonably-detailed documented on writing Data Studio connectors can be [found here](https://developers.google.com/datastudio/connector).
-
-In order to deploy and test your connector you will require a Google account, and will have to accept the Terms & Conditions of use for Data Studio.
 
 ## Getting started
 
