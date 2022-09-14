@@ -1,40 +1,42 @@
-const getSchema = () => {
-    const cc = DataStudioApp.createCommunityConnector();
+const cc = DataStudioApp.createCommunityConnector();
+const types = cc.FieldType;
+const aggregationType = cc.AggregationType;
 
-    const fields = cc.getFields();
+const _getField = (fields, fieldId) => {
+    switch (fieldId) {
+        case 'userName':
+            fields
+                .newDimension()
+                .setId('userName')
+                .setName('User name')
+                .setDescription('Name of user who made the post')
+                .setType(types.TEXT);
+            break;
+        case 'postLength':
+            fields
+                .newMetric()
+                .setId('postLength')
+                .setName('Post length')
+                .setDescription('Number of characters in the post')
+                .setType(types.NUMBER)
+                .setAggregation(aggregationType.AUTO);
+            break;
+        default:
+            throw new Error(`Invalid fieldId: ${fieldId}`);
+    }
 
-    [
-        {
-            id: 'userName',
-            name: 'User name',
-            description: 'Name of user who made the post',
-            type: cc.FieldType.TEXT,
-            metOrDim: 'dim',
-        },
-        {
-            id: 'postLength',
-            name: 'Post length',
-            description: 'Number of characters in the post',
-            type: cc.FieldType.NUMBER,
-            metOrDim: 'met',
-        },
-    ].forEach((field) => {
-        const newField =
-            field.metOrDim === 'dim'
-                ? fields.newDimension()
-                : fields.newMetric();
+    return fields;
+};
 
-        newField
-            .setId(field.id)
-            .setName(field.name)
-            .setDescription(field.description)
-            .setType(field.type);
+const getSchema = (request) => {
+    let fields = cc.getFields();
+
+    ['userName', 'postLength'].forEach((fieldId) => {
+        fields = _getField(fields, fieldId);
     });
 
     fields.setDefaultDimension('userName');
     fields.setDefaultMetric('postLength');
 
-    return {
-        schema: fields.build(),
-    };
+    return { schema: fields.build() };
 };

@@ -1,4 +1,9 @@
 const clientIdProperty = 'clientId';
+const cc = DataStudioApp.createCommunityConnector();
+
+const isAdminUser = () => {
+    return true;
+};
 
 const resetAuth = () =>
     PropertiesService.getUserProperties().deleteProperty(clientIdProperty);
@@ -7,9 +12,7 @@ const isAuthValid = () =>
     !!PropertiesService.getUserProperties().getProperty(clientIdProperty);
 
 const getAuthType = () => {
-    const cc = DataStudioApp.createCommunityConnector();
-
-    return cc.newAuthTypeResponse().setAuthType(cc.AuthType.USER_TOKEN).build();
+    return cc.newAuthTypeResponse().setAuthType(cc.AuthType.NONE).build();
 };
 
 interface SetCredentialsInput {
